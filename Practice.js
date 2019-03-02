@@ -1045,6 +1045,102 @@ console.log(b);
 
 */
 
+// The rest operator allows you to grab the rest of the elements in
+// an array and assign it to a variable. The rest element only works correctly 
+// as the last variable in the list. As in, you cannot use the rest operator 
+// to catch a subarray that leaves out last element of the original array.
+/*
+
+let randomArray = [1, 2, 3, 4, 5, 6];
+
+
+const [a, b, ...arr] = randomArray;
+
+console.log(a, b);
+console.log(arr);
+
+
+
+// Deconstructing Objects for Function Manipulation //
+
+
+const stats = {
+  max: 56.78,
+  standard_deviation: 4.34,
+  median: 34.54,
+  mode: 23.87,
+  min: -0.75,
+  average: 35.85
+};
+const half = ({max, min}) => { // This allos you to grab only what you need
+  // from the object.
+    return (max + min) / 2.0;
+  };
+  // change code above this line
+
+;
+console.log(stats); // should be object
+console.log(half(stats)); // should be 28.015
+
+*/
+
+////// Using Template String Literals with Objects ///////
+/*
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+
+  const resultDisplayArray = [`<li class="text-warning">${arr[0]}</li>`,
+                              `<li class="text-warning">${arr[1]}</li>`,
+                              `<li class="text-warning">${arr[2]}</li>`];
+
+  return resultDisplayArray;
+}
+
+const resultDisplayArray = makeList(result.failure);
+
+console.log(resultDisplayArray);
+
+*/
+
+///////// Using getters and setters within an Object ////////////
+/*
+function makeClass() {
+  "use strict";
+class Thermostat {
+  constructor(fahrenheit) {
+    this.fahrenheit = fahrenheit;
+  }
+  get temperature() {
+    return (this.fahrenheit - 32) * (5/9);
+  };
+
+  set temperature(updatedFahrenheit) {
+    this.fahrenheit = updatedFahrenheit;
+};
+};
+  return Thermostat;
+};
+const Thermostat = makeClass();
+const thermos = new Thermostat(76); // setting in Fahrenheit scale
+let temp = thermos.temperature; // 24.44 in C
+thermos.temperature = 26;
+temp = thermos.temperature; // 26 in C
+
+console.log(temp);
+
+
+*/
+
+// Use use 'import' to import specfic functions from a file. Learn more!
+
+
+// Use "export" to make functions avaible to be imported by other files.
+
 
 
 
