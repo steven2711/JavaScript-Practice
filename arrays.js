@@ -53,6 +53,8 @@ console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'Pal
 let weatherConditions = ['rain', 'snow', 'sleet', 'hail', 'clear'];
 
 let todaysWeather = weatherConditions.slice(1, 3); // First parmeter is index pointer, second is the index stopper.
+// Slice allows you to copy specified elements to a new
+// array without altering the original.
 // todaysWeather equals ['snow', 'sleet'];
 // weatherConditions still equals ['rain', 'snow', 'sleet', 'hail', 'clear']
 
@@ -142,3 +144,6 @@ let poop = [[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]];
 console.log(filteredArray(poop, 5));
 console.log(poop[0][1]);
 console.log(poop[0].indexOf(2));
+
+
+
