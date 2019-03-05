@@ -29,7 +29,7 @@ console.log(popShift(['challenge', 'is', 'not', 'complete']));
 let array = ['today', 'was', 'not', 'so', 'great'];
 
 let newArray = array.splice(2, 2); // First arg. defines array position.
-// Second arg. degines number of items to remove.
+// Second arg. defines number of items to remove.
 // remove 2 elements beginning with the 3rd element
 // array now equals ['today', 'was', 'great']
 console.log(array);
