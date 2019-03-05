@@ -38,6 +38,7 @@ console.log(newArray);
 */
 
 //////////////// Splice ex. 2 ///////////////
+/*
 function htmlColorNames(arr) {
   arr.splice(0, 2, "DarkSalmon", "Blanched Almond"); // The third parameter is used
   // to replace what was removed. Can take numerous args.
@@ -146,4 +147,131 @@ console.log(poop[0][1]);
 console.log(poop[0].indexOf(2));
 
 
+*/
 
+
+
+
+////////// Adding Key-value pairs to Objects ///////////
+/*
+let FCC_User = {
+  username: 'awesome_coder',
+  followers: 572,
+  points: 1741,
+  completedProjects: 15
+};
+
+let randVar = 'followers';
+
+// let userData = FCC_User.randVar;
+// You can't use dot notation to access an object with 
+// a variable.
+
+
+let userData = FCC_User[randVar];
+// You can use brackets however.
+
+
+console.log(userData);
+
+*/
+///////// Iterate Through the Keys of an Object with a For...In Statement //////////
+/*
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function countOnline(obj) {
+  let count = 0;
+  for (let user in obj) {
+    if (obj[user].online === true) { // Make sure to use bracket notation when
+      // using variables.
+      count++;
+    };
+    
+  };
+  return count;
+};
+
+console.log(countOnline(users));
+
+//console.log(users.Alan.online);
+
+*/
+
+////// Getting a list of object keys /////////
+/*
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+// Returns the object keys as strings in an array //
+function getArrayOfUsers(obj) {
+  return Object.keys(obj);
+}
+
+console.log(getArrayOfUsers(users));
+
+
+*/
+
+
+let user = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+  // change code below this line  
+  userObj.data.friends.push(friend);
+  return userObj.data.friends;
+  // change code above this line
+}
+
+console.log(addFriend(user, 'Pete'));
+
+//console.log(user.data.friends);
