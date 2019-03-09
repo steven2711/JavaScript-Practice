@@ -250,11 +250,150 @@ console.log(frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "
 */
 
 
+//////////// Remove Falsy Values from an Array /////////////
+/*
+function bouncer(arr) {
+
+  let newArr = arr.filter((item) => {
+    return item ? true : false;
+  })
+  return newArr;
+}
+
+console.log(bouncer([7, "ate", "", false, 9]));
+
+*/
 
 
 
 
 
+/////////////////// Random Algo ///////////////
+
+// Return the lowest index at which a value (second argument) 
+// should be inserted into an array (first argument) once 
+// it has been sorted. The returned value should be a number.
+
+/*
+
+// My solution
+
+function getIndexToIns(arr, num) {
+ // sorts the array
+ let index; 
+ 
+ arr.sort((a,b) => a - b);
+
+  if (arr.length < 1) {
+    index = 0;
+  } else if (num > arr[arr.length - 1]) {
+    index = arr.length;
+  } else {
+    index = arr.findIndex((item) => item >= num);
+  };
+  console.log(arr.length);
+  return index;
+  
+ 
+};
+
+console.log(getIndexToIns([2, 5, 10], 15));
+
+//let array = [5, 3, 20, 3];
+
+//array.sort((a,b) => a - b);
+
+//console.log(array);
 
 
 
+
+// Advanced solution
+
+function getIndexToIns(arr, num) {
+
+  return arr.concat(num).sort((a,b) => a-b).indexOf(num);
+  
+  }
+  
+  getIndexToIns([1,3,4],2);
+
+*/
+
+/*
+
+function mutation(arr) {
+
+  
+  let check = [];
+  
+  let firstWord = arr[0].toLowerCase().split('');
+  let secondWord = arr[1].toLowerCase().split('');
+
+  for (let i = 0; i < firstWord.length; i++) {
+
+    if (firstWord[i] === )
+
+  };
+
+  console.log(check.sort());
+  console.log(firstWord.sort());
+
+  return check.sort() === firstWord.sort() ? true : false;
+
+    
+};
+
+  
+
+
+//console.log(mutation(["hello", "hey"])); // false
+
+
+console.log(mutation(["hello", "Hello"])); // true
+
+
+*/
+
+/*
+
+let randomString = "This is a random fucking string";
+
+let array = ["is", "strung"];
+
+let regex = new RegExp(array[1]);
+
+
+let result = regex.test(randomString);
+
+console.log(result);
+
+
+*/
+
+let array = ["hello", "youhmotherll"];
+
+
+
+
+function mutation(arr) {
+
+  let firstWord = arr[0].toLowerCase().split('');
+  let secondWord = arr[1].toLowerCase().split('');
+
+  let check = [];
+
+
+  for (let i = 0; i < secondWord.length; i++) {
+    
+    let regex = new RegExp(secondWord[i]);
+
+    
+  
+
+  };
+    
+};
+
+
+console.log(mutation(array));
