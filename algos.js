@@ -320,80 +320,202 @@ function getIndexToIns(arr, num) {
 
 */
 
+
+
+
+////// Matching Letters ///////////////////
 /*
+// Return true if the string in the first element of 
+// the array contains all of the letters of the string in the 
+// second element of the array.
 
 function mutation(arr) {
+  var test = arr[1].toLowerCase();
+  var target = arr[0].toLowerCase();
+  for (var i=0;i<test.length;i++) {
+    if (target.indexOf(test[i]) < 0)
+      return false;
+  }
+  return true;
+ }
 
-  
-  let check = [];
-  
-  let firstWord = arr[0].toLowerCase().split('');
-  let secondWord = arr[1].toLowerCase().split('');
-
-  for (let i = 0; i < firstWord.length; i++) {
-
-    if (firstWord[i] === )
-
-  };
-
-  console.log(check.sort());
-  console.log(firstWord.sort());
-
-  return check.sort() === firstWord.sort() ? true : false;
-
-    
-};
-
-  
+ */
 
 
-//console.log(mutation(["hello", "hey"])); // false
+
+/////////////////// Chunky Monkey ///////////////////
+
+// Write a function that splits an array (first argument) 
+// into groups the length of size (second argument) and 
+// returns them as a two-dimensional array.
+
+/*
+
+function chunkArrayInGroups(arr, size) {
+
+  var arr2 = [];
+  for (var i = 0; i < arr.length; i+=size) {
+  arr2.push(arr.slice(i , i+size));
+  }
+  return arr2;
+}
+
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
 
 
-console.log(mutation(["hello", "Hello"])); // true
 
 
 */
 
 /*
 
-let randomString = "This is a random fucking string";
+function sentensify(str) {
+  // Add your code below this line
+   return str.split(/\W/).join(' ');
+  
+  
+  // Add your code above this line
+}
+console.log(sentensify("May-the-force-be-with-you"));
 
-let array = ["is", "strung"];
-
-let regex = new RegExp(array[1]);
 
 
-let result = regex.test(randomString);
+// the global variable
+var globalTitle = "Winter Is Coming";
 
-console.log(result);
+// Add your code below this line
+function urlSlug(title) {
+  
+  return title.toLowerCase().trim().split(/\s+/).join('-');
+}
+// Add your code above this line
+
+var winterComing = urlSlug(globalTitle); // Should be "winter-is-coming"
+
+console.log(winterComing);
+
 
 
 */
 
-let array = ["hello", "youhmotherll"];
 
+///////////// Using every() ////////////////////
 
-
-
-function mutation(arr) {
-
-  let firstWord = arr[0].toLowerCase().split('');
-  let secondWord = arr[1].toLowerCase().split('');
-
-  let check = [];
-
-
-  for (let i = 0; i < secondWord.length; i++) {
-    
-    let regex = new RegExp(secondWord[i]);
-
-    
+// Returns a boolean value after a function is applied to every
+// item in an array
+/*
+function checkPositive(arr) {
+  // Add your code below this line
+  return arr.every((item) => {
+    return item > 0})
   
+  // Add your code above this line
+}
+console.log(checkPositive([1, 2, 3, 4, 5]));
 
+
+
+///////////////////  Using some() /////////////////
+
+// The some method works with arrays to check if any 
+// element passes a particular test. It returns a Boolean 
+// value - true if any of the values meet the criteria, 
+// false if not.
+
+
+
+
+
+
+
+
+////////////// Example of a curry function /////////////
+
+
+function add(x) {
+  return function(y) {
+    return function(z) {
+      return x + y + z;
+    }
+  }
+}
+add(10)(20)(30);
+
+*/
+
+/*
+
+function whatIsInAName(collection, source) {
+  // What's in a name?
+   let arr = collection.filter((n) => {
+     return n === source; 
+   })
+  // Only change code below this line
+  
+  
+  // Only change code above this line
+  
+  return arr;
+}
+
+console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+
+
+
+*/
+
+/////////////////////// Converts Number to Roman Number ///////
+
+function convertToRoman(num) {
+ 
+  let answer = '';
+
+  while (num > 0) {
+    if (num >= 1000) {
+      answer += 'M';
+      num -= 1000;
+    } else if (num >= 900) {
+      answer += 'CM';
+      num -= 900;
+    } else if (num >= 500) {
+      answer += 'D';
+      num -= 500;
+    } else if (num >= 400) {
+      answer += 'CD';
+      num -= 400;
+    } else if (num >= 100) {
+      answer += 'C';
+      num -= 100;
+    } else if (num >= 90) {
+      answer += 'XC';
+      num -= 90;
+    } else if (num >= 50) {
+      answer += 'L';
+      num -= 50;
+    } else if (num >= 40) {
+      answer += 'XL';
+      num -= 40;
+    } else if (num >= 10) {
+      answer += 'X';
+      num -= 10;
+    } else if (num === 9) {
+      answer += 'IX';
+      num -= 9;
+    } else if (num >= 5) {
+      answer += 'V';
+      num -= 5;
+    } else if (num === 4) {
+      answer += 'IV';
+      num -= 4;
+    } else if (num >= 1) {
+      answer += 'I';
+      num -= 1;
+    }
   };
-    
-};
-
-
-console.log(mutation(array));
+  
+  
+  
+  return answer;
+ }
+ 
+ console.log(convertToRoman(9));
