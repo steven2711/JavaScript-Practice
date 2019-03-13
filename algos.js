@@ -465,7 +465,7 @@ console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercu
 */
 
 /////////////////////// Converts Number to Roman Number ///////
-
+/*
 function convertToRoman(num) {
  
   let answer = '';
@@ -519,3 +519,58 @@ function convertToRoman(num) {
  }
  
  console.log(convertToRoman(9));
+
+ */
+
+
+
+ ////////////////////// Ceasar's Cipher ////////////////////
+
+ // One of the simplest and most widely known ciphers 
+ // is a Caesar cipher, also known as a shift cipher. In a shift cipher 
+ // the meanings of the letters are shifted by some set amount.
+
+// A common modern use is the ROT13 cipher, where the values of the 
+// letters are shifted by 13 places. Thus 'A' ↔ 'N', 'B' ↔ 'O' and so on.
+
+
+
+function rot13 (string) {
+
+  const alphabet = [' ', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+  'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '?', '.'];
+
+  const codedAlphabet = [' ', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 
+  'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', '!', '?', '.'];
+  
+  let decodedCipher = [];
+
+
+  let splitString = string.toUpperCase().split('');
+  console.log(splitString);
+
+  splitString.forEach((codeLetter) => {
+
+    for (let i = 0; i < alphabet.length; i++) {
+      if (codeLetter === alphabet[i]) {
+        decodedCipher.push(codedAlphabet[i]);
+      };
+    };
+
+  });
+
+  return decodedCipher.join('');
+  
+};
+
+
+let codedString = 'SERR PBQR PNZC!';
+
+
+
+
+
+
+
+
+console.log(rot13(codedString));
