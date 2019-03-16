@@ -526,6 +526,7 @@ function convertToRoman(num) {
 
  ////////////////////// Ceasar's Cipher ////////////////////
 
+ /*
  // One of the simplest and most widely known ciphers 
  // is a Caesar cipher, also known as a shift cipher. In a shift cipher 
  // the meanings of the letters are shifted by some set amount.
@@ -563,14 +564,127 @@ function rot13 (string) {
   
 };
 
-
 let codedString = 'SERR PBQR PNZC!';
-
-
-
-
-
-
-
-
 console.log(rot13(codedString));
+
+
+////// Advanced solution ///////////
+/*
+function rot13(str) { // LBH QVQ VG!
+  return str.replace(/[A-Z]/g, L => String.fromCharCode((L.charCodeAt(0) % 26) + 65));
+};
+*/
+
+
+
+
+///////////// Steamroller ///////////////////
+
+// Flatten a nested array. You must account 
+// for varying levels of nesting.
+/*
+function steamrollArray(array) {
+
+  let answerArray = [];
+  
+  array.forEach((value) => {
+    answerArray.push(value);
+  });
+
+
+
+  return answerArray;
+}
+
+console.log(steamrollArray([1, [2], [3, [[4]]]]));
+
+
+*/
+
+
+///////////////////// Palindrome Checker //////////////////////
+// My solution
+/*
+function palindrome(string) {
+
+  function removeCharactersFromSentence (sentence) {
+    let regex = /[a-z0-9]/ig;
+    let result = sentence.match(regex);
+    return result;
+  };
+
+  let characterFreeArray = removeCharactersFromSentence(string);
+  return characterFreeArray.join('').toLowerCase() === characterFreeArray.reverse('').join('').toLowerCase();
+
+};
+
+console.log(palindrome("A man, a plan, a canal. Panama"));
+
+// Faster solution. This solution doesn.t have to read th string 
+// multiple times before determining if the string is palindrome.
+
+function palindrome(str) {
+  //assign a front and a back pointer
+  let front = 0
+  let back = str.length - 1
+
+  //back and front pointers won't always meet in the middle, so use (back > front)
+  while (back > front) {
+    //increments front pointer if current character doesn't meet criteria
+    if ( str[front].match(/[\W_]/) ) {
+      front++
+      continue
+    }
+    //decrements back pointer if current character doesn't meet criteria
+    if ( str[back].match(/[\W_]/) ) {
+      back--
+      continue
+    }
+    //finally does the comparison on the current character
+    if ( str[front].toLowerCase() !== str[back].toLowerCase() ) return false
+    front++
+    back--
+  }
+
+  //if the whole string has been compared without returning false, it's a palindrome!
+  return true
+
+}
+
+*/
+
+/*
+
+
+function alphabeticalOrder(arr) {
+  // Add your code below this line
+  return arr.sort();
+  // Add your code above this line
+};
+
+let random = ["a", "d", "c", "a", "z", "g"];
+console.log(alphabeticalOrder(random));
+
+*/
+
+
+function translatePigLatin(str) {
+
+  let splitString = str.split('');
+  let regex = /a|e|i|o|u/i;
+
+  if (regex.test(splitString[0]) !== true && regex.test(splitString[1]) !== true) {
+    return splitString.splice(2, splitString.length).join('') + str[0] + str[1] + 'ay';
+  } else if (regex.test(splitString[0]) !== true) {
+    return splitString.splice(1, splitString.length).join('') + str[0] + 'ay';
+  } else {
+    return str + 'way';
+  }
+  
+
+
+
+
+};
+
+console.log(translatePigLatin("consonant"));

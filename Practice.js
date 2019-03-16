@@ -7,49 +7,7 @@
 var ans = factorialize(5);
 console.log(ans);*/
 
-
-
-// Palindrome Function
 /*
- function palindrome(str) {
-   //assign a front and a back pointer
-   var front = 0;
-   var back = str.length - 1;
-
-   //back and front pointers won't always meet in the middle, so use (back > front)
-   while (back > front) {
-     //increments front pointer if current character doesn't meet criteria
-     while ( str[front].match(/[\W_]/) ) {
-       front++;
-       continue;
-     }
-     //decrements back pointer if current character doesn't meet criteria
-     while ( str[back].match(/[\W_]/) ) {
-       back--;
-       continue;
-     }
-     //finally does the comparison on the current character
-     if ( str[front].toLowerCase() !== str[back].toLowerCase() ) {
-       return false;} else {
-       front++;
-       back--;
-       }
- }
-
-   //if the whole string has been compared without returning false, it's a palindrome!
-   return true;
- }
-
- var ans = palindrome('mom');
- console.log(ans);
-
- */
- /*
-
-
-
-
-
 
 
 
@@ -216,19 +174,21 @@ console.log(checkObj("shit"));*/
 
 
 
-/*
 
+
+//////////////////// Random Whole Number /////////////////////
+/*
 function randomWholeNum() {
 
-  // Only change code below this line.
-  var num = Math.floor(Math.random() * 10);
-  return num;
+  let maxNumberRange = 10;
+  return Math.floor(Math.random() * maxNumberRange);
+  
 };
 
 
 console.log(randomWholeNum());
-*/
 
+*/
 
 
 /*function randomRange(myMin, myMax) {
