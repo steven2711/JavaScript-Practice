@@ -667,6 +667,8 @@ console.log(alphabeticalOrder(random));
 
 */
 
+/////////////////////// Translate string into pig latin ///////////////
+/*
 
 function translatePigLatin(str) {
 
@@ -680,11 +682,57 @@ function translatePigLatin(str) {
   } else {
     return str + 'way';
   }
-  
-
-
-
-
 };
 
 console.log(translatePigLatin("consonant"));
+*/
+
+
+
+class Beer {
+  constructor(name, type, abv) {
+    this.name = name;
+    this.type = type;
+    this.abv = abv;
+  }
+
+  whatBeer() {
+    
+    return `Fuck you, ${this.name}`;
+  }
+}
+
+
+class SuperBeer extends Beer {
+  constructor(name, type, abv, desc, ibu) {
+    super(name, type, abv);
+    this.desc = desc;
+    this.ibu = ibu;
+  }
+}
+
+
+const newBeer = new Beer('Homestyle', 'IPA', 9.0);
+
+let beerObjectArray = [];
+
+
+let createNewBeerObject = (name, type, abv) => {
+  beerObjectArray.push(new Beer(name, type, abv));
+
+}
+
+createNewBeerObject('Falls City', 'Pills', 7);
+createNewBeerObject('Homestyle', 'IPA', 9);
+
+
+console.log(beerObjectArray.length);
+
+let logArray = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    console.log(array[i].name);
+  }
+}
+
+
+console.log(logArray(beerObjectArray));
