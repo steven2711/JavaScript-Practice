@@ -149,9 +149,6 @@ console.log(poop[0].indexOf(2));
 
 */
 
-
-
-
 ////////// Adding Key-value pairs to Objects ///////////
 /*
 let FCC_User = {
@@ -243,35 +240,3 @@ console.log(getArrayOfUsers(users));
 
 
 */
-
-
-let user = {
-  name: 'Kenneth',
-  age: 28,
-  data: {
-    username: 'kennethCodesAllDay',
-    joinDate: 'March 26, 2016',
-    organization: 'freeCodeCamp',
-    friends: [
-      'Sam',
-      'Kira',
-      'Tomo'
-    ],
-    location: {
-      city: 'San Francisco',
-      state: 'CA',
-      country: 'USA'
-    }
-  }
-};
-
-function addFriend(userObj, friend) {
-  // change code below this line  
-  userObj.data.friends.push(friend);
-  return userObj.data.friends;
-  // change code above this line
-}
-
-console.log(addFriend(user, 'Pete'));
-
-//console.log(user.data.friends);

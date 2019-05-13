@@ -57,7 +57,6 @@ console.log(findLongestWordLength(randoStr));
 
 */
 
-
 /*
 //////////////// Find the Largest Number in Subarrays /////////////////
 
@@ -88,7 +87,7 @@ console.log(largestOfFour(randoArray));
 function test(str, target) {
   return str.slice(str.length - target.length) === target;
 };
-// Slice removes a segment of the entire string. Remember, string characters behave live an array
+// Slice removes a segment of the entire string. Remember, string characters behave like an array
 // but are immutable.
 let randoStr = "Butthole is magical";
 
@@ -114,7 +113,6 @@ function repeatStringNumTimes(str, num) {
 console.log(repeatStringNumTimes("shit", -1));
 */
 
-
 //////////// Truncate a String ////////////
 
 /*
@@ -133,13 +131,10 @@ console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
 
 */
 
-
-
 /////////////////////////////// Finders Keepers //////////////////////////////
 
-
-// A function that looks through an array (first argument) and returns 
-// the first element in the array that passes a truth test (second argument). 
+// A function that looks through an array (first argument) and returns
+// the first element in the array that passes a truth test (second argument).
 // If no element passes the test, return undefined.
 
 /*
@@ -159,7 +154,6 @@ console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
 
 */
 
-
 /////////////////// Bool Primative Check ///////////////////
 
 // Check if a value is classified as a boolean primitive. Return true or false.
@@ -173,7 +167,6 @@ console.log(booWho(true));
 */
 
 ////////////////////// Title Case a Sentence //////////////////////////
-
 
 // My solution
 /*
@@ -199,7 +192,6 @@ console.log(titleCase("sHoRt AnD sToUt"));
 
 */
 
-
 /*
 // Other solution, intermediate
 
@@ -221,7 +213,6 @@ function titleCase(str) {
 }
 
 */
-
 
 ///////////////// Slice and Splice ///////////////////////
 /*
@@ -249,7 +240,6 @@ console.log(frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "
 
 */
 
-
 //////////// Remove Falsy Values from an Array /////////////
 /*
 function bouncer(arr) {
@@ -264,14 +254,10 @@ console.log(bouncer([7, "ate", "", false, 9]));
 
 */
 
-
-
-
-
 /////////////////// Random Algo ///////////////
 
-// Return the lowest index at which a value (second argument) 
-// should be inserted into an array (first argument) once 
+// Return the lowest index at which a value (second argument)
+// should be inserted into an array (first argument) once
 // it has been sorted. The returned value should be a number.
 
 /*
@@ -320,9 +306,6 @@ function getIndexToIns(arr, num) {
 
 */
 
-
-
-
 ////// Matching Letters ///////////////////
 /*
 // Return true if the string in the first element of 
@@ -341,12 +324,10 @@ function mutation(arr) {
 
  */
 
-
-
 /////////////////// Chunky Monkey ///////////////////
 
-// Write a function that splits an array (first argument) 
-// into groups the length of size (second argument) and 
+// Write a function that splits an array (first argument)
+// into groups the length of size (second argument) and
 // returns them as a two-dimensional array.
 
 /*
@@ -397,7 +378,6 @@ console.log(winterComing);
 
 
 */
-
 
 ///////////// Using every() ////////////////////
 
@@ -522,11 +502,9 @@ function convertToRoman(num) {
 
  */
 
+////////////////////// Ceasar's Cipher ////////////////////
 
-
- ////////////////////// Ceasar's Cipher ////////////////////
-
- /*
+/*
  // One of the simplest and most widely known ciphers 
  // is a Caesar cipher, also known as a shift cipher. In a shift cipher 
  // the meanings of the letters are shifted by some set amount.
@@ -575,12 +553,9 @@ function rot13(str) { // LBH QVQ VG!
 };
 */
 
-
-
-
 ///////////// Steamroller ///////////////////
 
-// Flatten a nested array. You must account 
+// Flatten a nested array. You must account
 // for varying levels of nesting.
 /*
 function steamrollArray(array) {
@@ -600,7 +575,6 @@ console.log(steamrollArray([1, [2], [3, [[4]]]]));
 
 
 */
-
 
 ///////////////////// Palindrome Checker //////////////////////
 // My solution
@@ -687,52 +661,215 @@ function translatePigLatin(str) {
 console.log(translatePigLatin("consonant"));
 */
 
+// class Beer {
+//   constructor(name, type, abv) {
+//     this.name = name;
+//     this.type = type;
+//     this.abv = abv;
+//   }
 
+//   whatBeer() {
+//     return `Fuck you, ${this.name}`;
+//   }
+// }
 
-class Beer {
-  constructor(name, type, abv) {
-    this.name = name;
-    this.type = type;
-    this.abv = abv;
-  }
+// class SuperBeer extends Beer {
+//   constructor(name, type, abv, desc, ibu) {
+//     super(name, type, abv);
+//     this.desc = desc;
+//     this.ibu = ibu;
+//   }
+// }
 
-  whatBeer() {
-    
-    return `Fuck you, ${this.name}`;
-  }
+// const newBeer = new Beer("Homestyle", "IPA", 9.0);
+
+// let beerObjectArray = [];
+
+// let createNewBeerObject = (name, type, abv) => {
+//   beerObjectArray.push(new Beer(name, type, abv));
+// };
+
+// createNewBeerObject("Falls City", "Pills", 7);
+// createNewBeerObject("Homestyle", "IPA", 9);
+
+// console.log(beerObjectArray.length);
+
+// let logArray = array => {
+//   for (let i = 0; i < array.length; i++) {
+//     console.log(array[i].name);
+//   }
+// };
+
+// console.log(logArray(beerObjectArray));
+
+// function digital_root(n) {
+//   let numberArray = n.toString().split("");
+//   let answer = 0;
+
+//   for (let i = 0; i < numberArray.length; i++) {
+//     answer += parseInt(numberArray[i], 10);
+//   }
+
+//   while (answer.toString().length > 1) {
+//     let newAnswer = 0;
+//     let test = answer.toString();
+
+//     for (let k = 0; k < test.length; k++) {
+//       newAnswer += parseInt(test[k], 10);
+//     }
+
+//     answer = newAnswer;
+//   }
+
+//   return answer;
+// }
+
+// console.log(digital_root(837));
+
+// function divisors(integer) {
+//   let answer = [];
+
+//   for (let i = 2; i < integer; i++) {
+//     if (integer % i === 0) {
+//       answer.push(i);
+//     }
+//   }
+
+//   if (!answer.length) {
+//     return `${integer} is prime`;
+//   } else {
+//     return answer;
+//   }
+// }
+
+// console.log(divisors(13));
+
+let test = "1 555)555-5555";
+
+function telephoneCheck(str) {
+  let regExp = /\d|/g;
+  let secondRegExp = /\d|\D/g;
+  let funkyArray = str.match(secondRegExp);
+  console.log(funkyArray);
+  let numbersArray = str.match(regExp);
+  console.log(numbersArray);
+
+  if (numbersArray.length === 11 && numbersArray[0] !== "1") return false;
+  if (numbersArray.length !== 10 && numbersArray.length !== 11) return false;
+  return true;
 }
+console.log(telephoneCheck(test));
 
+////////////// FCC Cash Register Problem //////////////
 
-class SuperBeer extends Beer {
-  constructor(name, type, abv, desc, ibu) {
-    super(name, type, abv);
-    this.desc = desc;
-    this.ibu = ibu;
-  }
-}
+// function checkCashRegister(price, cash, cid) {
+//   let cashRegister = { status: "", change: cid };
+//   // console.log(cashRegister.status);
+//   const changeNeeded = parseFloat(cash - price).toFixed(2);
+//   const availableChange = totalCashRegister(cid);
+//   cashRegister.status = getRegisterStatus(changeNeeded, availableChange);
+//   // console.log(cashRegister.status);
 
+//   if (cashRegister.status === "INSUFFICIENT_FUNDS") {
+//     cashRegister.change = [];
 
-const newBeer = new Beer('Homestyle', 'IPA', 9.0);
+//     return cashRegister;
+//   }
 
-let beerObjectArray = [];
+//   // console.log(cashRegister.status);
 
+//   cashRegister.change = getCustomerChange(changeNeeded, cid);
 
-let createNewBeerObject = (name, type, abv) => {
-  beerObjectArray.push(new Beer(name, type, abv));
+//   if (changeNeeded > totalCashRegister(cashRegister.change)) {
+//     cashRegister.status = "INSUFFICIENT_FUNDS";
+//     cashRegister.change = [];
+//   }
 
-}
+//   // console.log(cashRegister.status);
 
-createNewBeerObject('Falls City', 'Pills', 7);
-createNewBeerObject('Homestyle', 'IPA', 9);
+//   if (cashRegister.status === "CLOSED") {
+//     cashRegister.change = [...cid];
+//   }
 
+//   // console.log(cashRegister.status);
 
-console.log(beerObjectArray.length);
+//   return cashRegister;
 
-let logArray = (array) => {
-  for (let i = 0; i < array.length; i++) {
-    console.log(array[i].name);
-  }
-}
+//   ////////////// Register Total //////////////
+//   function totalCashRegister(changeInDrawer) {
+//     let total = 0;
 
+//     for (let change of changeInDrawer) {
+//       let changeValue = change[1];
+//       total += changeValue;
+//     }
 
-console.log(logArray(beerObjectArray));
+//     return total.toFixed(2);
+//   }
+
+//   //////// Register Sattus /////////////
+//   function getRegisterStatus(changeNeeded, availableChange) {
+//     if (Number(changeNeeded) > Number(availableChange)) {
+//       return "INSUFFICIENT_FUNDS";
+//     }
+
+//     if (Number(changeNeeded) < Number(availableChange)) {
+//       return "OPEN";
+//     }
+
+//     return "CLOSED";
+//   }
+
+//   function getCustomerChange(changeNeeded, changeInDrawer) {
+//     let change = [];
+
+//     // prettier-ignore
+//     const CURRENCY_DICTIONARY = {
+//       PENNY: 0.01,
+//       NICKEL: 0.05,
+//       DIME: 0.10,
+//       QUARTER: 0.25,
+//       ONE: 1.00,
+//       FIVE: 5.00,
+//       TEN: 10.00,
+//       TWENTY: 20.00,
+//       FIFTY: 50.00,
+//       "ONE HUNDRED": 100.00
+//     };
+
+//     for (let i = changeInDrawer.length - 1; i >= 0; i--) {
+//       const coinName = changeInDrawer[i][0];
+//       const coinTotal = changeInDrawer[i][1];
+//       const coinValue = CURRENCY_DICTIONARY[coinName];
+//       let coinAmount = coinTotal / coinValue;
+//       let coinsToReturn = 0;
+
+//       while (changeNeeded >= coinValue && coinAmount > 0) {
+//         changeNeeded -= coinValue;
+//         changeNeeded = changeNeeded.toFixed(2);
+//         coinAmount--;
+//         coinsToReturn++;
+//       }
+
+//       if (coinsToReturn > 0) {
+//         change.push([coinName, coinsToReturn * coinValue]);
+//       }
+//     }
+
+//     return change;
+//   }
+// }
+
+// console.log(
+//   checkCashRegister(19.5, 20, [
+//     ["PENNY", 0.01],
+//     ["NICKEL", 0],
+//     ["DIME", 0],
+//     ["QUARTER", 0],
+//     ["ONE", 1],
+//     ["FIVE", 0],
+//     ["TEN", 0],
+//     ["TWENTY", 0],
+//     ["ONE HUNDRED", 0]
+//   ])
+// );

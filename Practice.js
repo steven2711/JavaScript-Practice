@@ -40,13 +40,6 @@ function curry(binary, first) {
 */
 // Sample recursive function.
 
-
-
-
-
-
-
-
 // Array function
 /*
 function nameLength(name) {
@@ -58,7 +51,6 @@ for (var i = 0; i <= name.length; i++) {
 
 nameLength("Steven");
 */
-
 
 // Golf Code
 /*
@@ -125,7 +117,6 @@ function caseInSwitch(val) {
 console.log(caseInSwitch(4));
 */
 
-
 /*
 
 
@@ -172,10 +163,6 @@ function checkObj(checkProp) {
 // Test your code by modifying these values
 console.log(checkObj("shit"));*/
 
-
-
-
-
 //////////////////// Random Whole Number /////////////////////
 /*
 function randomWholeNum() {
@@ -189,7 +176,6 @@ function randomWholeNum() {
 console.log(randomWholeNum());
 
 */
-
 
 /*function randomRange(myMin, myMax) {
 
@@ -232,7 +218,6 @@ function factorialize(num) {
 
 console.log(factorialize(6));
 */
-
 
 ////// Playing with Constructors //////////
 /*function Dog(name, color) {
@@ -307,10 +292,6 @@ function joinDogFraternity(candidate) {
 console.log(joinDogFraternity(collie));
 */
 
-
-
-
-
 ///// Adding Methods after Inheritance //////////////////
 /*
 function Animal() { }
@@ -356,7 +337,6 @@ console.log(swan.getNumLegs());
   console.log("A cozy nest is ready");
 })(); /// Invokes an anonymous function.
 */
-
 
 //////////// Example of Using Functional Programming ///////////
 /*
@@ -648,7 +628,6 @@ console.log(playGame('paper'));
 
 */
 
-
 ////////// Calculate your Weight on Other Planets /////////
 /*
 
@@ -682,8 +661,6 @@ function calculateWeight(earthWeight, planet) {
 console.log(calculateWeight(190, 'Mars'));
 
 */
-
-
 
 /////// Matching Items in Lists /////////
 
@@ -792,7 +769,6 @@ function diffArray(arr1, arr2) {
 console.log(diffArray(poop, miya));
 
 */
-
 
 ////// Remove certain elements from an array /////////
 /*
@@ -930,7 +906,6 @@ console.log(squaredIntegers);
 
 */
 
-
 /*
 /////////////////// Using the rest operator/////////////////
 // The rest operator allows a variable number of arguements
@@ -944,7 +919,6 @@ console.log(sum(1, 2, 3)); // 6
 
 
 */
-
 
 /////// Using the Spread Operator ///////////
 /*
@@ -964,7 +938,6 @@ console.log(maximus);
 
 */
 
-
 /////// Use Destructuring Assignment to Assign Variables from Nested Objects ///////
 /*
 const LOCAL_FORECAST = {
@@ -981,9 +954,6 @@ function getMaxOfTmrw(forecast) {
 console.log(getMaxOfTmrw(LOCAL_FORECAST)); // should be 84.6
 
 */
-
-
-
 
 /////////////////// Using Destructuring Assignment with Arrays ////////////////
 /*
@@ -1006,8 +976,8 @@ console.log(b);
 */
 
 // The rest operator allows you to grab the rest of the elements in
-// an array and assign it to a variable. The rest element only works correctly 
-// as the last variable in the list. As in, you cannot use the rest operator 
+// an array and assign it to a variable. The rest element only works correctly
+// as the last variable in the list. As in, you cannot use the rest operator
 // to catch a subarray that leaves out last element of the original array.
 /*
 
@@ -1098,10 +1068,61 @@ console.log(temp);
 
 // Use use 'import' to import specfic functions from a file. Learn more!
 
-
 // Use "export" to make functions avaible to be imported by other files.
 
+// function solve(meal_cost, tip_percent, tax_percent) {
+//   let tip = meal_cost * (tip_percent / 100);
+//   let tax = meal_cost * (tax_percent / 100);
+//   return Math.round(meal_cost + tip + tax);
+// }
 
+// console.log(solve(12.0, 20, 8));
 
+////////////////// Pair Counter //////////////////
 
+// let sample = [4, 5, 5, 5, 6, 6, 4, 1, 4, 4, 3, 6, 6, 3, 6, 1, 4, 5, 5, 5];
 
+// function sockMerchant(n, ar) {
+//   let newArr = [...ar];
+//   newArr.sort((a, b) => a - b);
+//   console.log(newArr);
+
+//   let pairCounter = 0;
+//   let pairTracker = 0;
+
+//   for (let i = 0; i < n; i++) {
+//     if (newArr[i] === newArr[i + 1]) {
+//       pairCounter++;
+//       i++;
+//     }
+//   }
+
+//   return pairCounter;
+// }
+
+// console.log(sockMerchant(20, sample));
+
+// let sample = "UDDDUDUUDU";
+
+// function countingValleys(n, s) {
+//   let splitArray = s.split("");
+//   console.log(splitArray);
+
+//   let elevationTracker = 0;
+//   let valleyCounter = 0;
+
+//   for (let i = 0; i < n; i++) {
+//     if (splitArray[i] === "U") {
+//       elevationTracker++;
+//     } else if (splitArray[i] === "D") {
+//       if (elevationTracker === 0) {
+//         valleyCounter++;
+//       }
+//       elevationTracker--;
+//     }
+//   }
+
+//   return valleyCounter;
+// }
+
+// console.log(countingValleys(10, sample));

@@ -34,21 +34,18 @@ for(var i = 0;i < rows; i++) {
 console.log(output);
 */
 
+/////// Half Pyramid Formation (Staircase) ///////////
 
-
-// Half Pyramid Formation
-
-function createHalfPyramid (height) {
-
+function createHalfPyramid(height) {
   for (var i = 1; i <= height; i++) {
-    var row = '';
+    var row = "";
 
-    for (var j = 1; j <= (height - i); j++) {
-      row += ' ';
+    for (var j = 1; j <= height - i; j++) {
+      row += " ";
     }
 
     for (var k = 1; k <= i; k++) {
-      row += '*';
+      row += "*";
     }
 
     console.log(row);
