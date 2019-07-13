@@ -55,3 +55,17 @@
 //   });
 
 // console.log(data);
+function tweetIntervalDay() {
+  const currentHour = new Date().getMinutes();
+
+  return currentHour < 2 ? console.log("one second") : null;
+}
+
+function tweetIntervalNight() {
+  const currentHour = new Date().getMinutes();
+
+  return currentHour >= 2 ? console.log("two seconds") : null;
+}
+
+setInterval(() => tweetIntervalDay(), 1000);
+setInterval(() => tweetIntervalNight(), 2000);
