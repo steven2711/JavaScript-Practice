@@ -1126,3 +1126,32 @@ console.log(temp);
 // }
 
 // console.log(countingValleys(10, sample));
+
+let array = "7------+1";
+
+let splitArray = array.split("");
+
+const filterOperation = array => {
+  const operations = ["+", "-", "/", "*"];
+  let filtered = [];
+  let operationTracker = null;
+  for (let i = array.length; i >= 0; i--) {
+    if (!isNaN(parseInt(array[i]))) {
+      filtered.push(array[i]);
+      console.log(filtered);
+    } else if (
+      operations.join().includes(array[i]) &&
+      operationTracker === null
+    ) {
+      operationTracker = array[i];
+      filtered.push(array[i]);
+      console.log(filtered);
+    }
+  }
+
+  return filtered.reverse().join("");
+};
+
+let newString = filterOperation(splitArray);
+
+console.log(eval(newString));

@@ -544,8 +544,8 @@ console.log(phoneticLookup("charlie"));
 
 ///////////// Unique Array //////////////
 
-function uniteUnique(arr) {
-  return arr;
-}
+// function uniteUnique(arr) {
+//   return arr;
+// }
 
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+// uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);

@@ -744,21 +744,21 @@ console.log(translatePigLatin("consonant"));
 
 // console.log(divisors(13));
 
-let test = "1 555)555-5555";
+// let test = "1 555)555-5555";
 
-function telephoneCheck(str) {
-  let regExp = /\d|/g;
-  let secondRegExp = /\d|\D/g;
-  let funkyArray = str.match(secondRegExp);
-  console.log(funkyArray);
-  let numbersArray = str.match(regExp);
-  console.log(numbersArray);
+// function telephoneCheck(str) {
+//   let regExp = /\d|/g;
+//   let secondRegExp = /\d|\D/g;
+//   let funkyArray = str.match(secondRegExp);
+//   console.log(funkyArray);
+//   let numbersArray = str.match(regExp);
+//   console.log(numbersArray);
 
-  if (numbersArray.length === 11 && numbersArray[0] !== "1") return false;
-  if (numbersArray.length !== 10 && numbersArray.length !== 11) return false;
-  return true;
-}
-console.log(telephoneCheck(test));
+//   if (numbersArray.length === 11 && numbersArray[0] !== "1") return false;
+//   if (numbersArray.length !== 10 && numbersArray.length !== 11) return false;
+//   return true;
+// }
+// console.log(telephoneCheck(test));
 
 ////////////// FCC Cash Register Problem //////////////
 
@@ -795,7 +795,7 @@ console.log(telephoneCheck(test));
 
 //   return cashRegister;
 
-//   ////////////// Register Total //////////////
+//   //   ////////////// Register Total //////////////
 //   function totalCashRegister(changeInDrawer) {
 //     let total = 0;
 
@@ -807,7 +807,7 @@ console.log(telephoneCheck(test));
 //     return total.toFixed(2);
 //   }
 
-//   //////// Register Sattus /////////////
+//   //////// Register Satus /////////////
 //   function getRegisterStatus(changeNeeded, availableChange) {
 //     if (Number(changeNeeded) > Number(availableChange)) {
 //       return "INSUFFICIENT_FUNDS";
@@ -873,3 +873,129 @@ console.log(telephoneCheck(test));
 //     ["ONE HUNDRED", 0]
 //   ])
 // );
+
+////////////////// Coding interview algorithms /////////////////
+
+//////////// Find the symmetric difference ////////////
+
+// function symmetricDifference(args) {
+//   const [...arrays] = arguments;
+
+//   // finds the difference of two arrays
+//   // handles duplicates
+//   function checkDifference(arrayOne, arrayTwo) {
+//     let result = [];
+
+//     for (let i = 0; i < arrayOne.length; i++) {
+//       if (!arrayTwo.includes(arrayOne[i]) && !result.includes(arrayOne[i])) {
+//         result.push(arrayOne[i]);
+//       }
+//     }
+
+//     for (let i = 0; i < arrayTwo.length; i++) {
+//       if (!arrayOne.includes(arrayTwo[i]) && !result.includes(arrayTwo[i])) {
+//         result.push(arrayTwo[i]);
+//       }
+//     }
+
+//     return result;
+//   }
+
+//   return arrays.reduce(checkDifference);
+// }
+
+// console.log(symmetricDifference([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]));
+
+//////////////  Inventory Update /////////////////
+
+// Compare and update the inventory stored in a 2D array against
+// a second 2D array of a fresh delivery. Update the current existing
+// inventory item quantities (in arr1). If an item cannot be found,
+// add the new item and quantity into the inventory array. The
+// returned inventory array should be in alphabetical order by item.
+
+// function updateInventory(curInv, newInv) {
+//   const finishedInventory = [...curInv];
+
+//   function checkItem(item, inventory) {
+//     for (let i = 0; i < inventory.length; i++) {
+//       if (item === inventory[i][1]) {
+//         return true;
+//       }
+//     }
+//   }
+
+//   function updateItem(item, inventory) {
+//     for (let i = 0; i < inventory.length; i++) {
+//       if (inventory[i][1] === item[1]) {
+//         inventory[i][0] += item[0];
+//       }
+//     }
+//   }
+
+//   function sortInventory(inventory) {
+//     return inventory.sort((a, b) => (a[1] > b[1] ? 1 : -1));
+//   }
+
+//   for (let i = 0; i < newInv.length; i++) {
+//     if (checkItem(newInv[i][1], finishedInventory)) {
+//       updateItem(newInv[i], finishedInventory);
+//     } else {
+//       finishedInventory.push(newInv[i]);
+//     }
+//   }
+
+//   return sortInventory(finishedInventory);
+// }
+
+// // Example inventory lists
+// var curInv = [
+//   [21, "Bowling Ball"],
+//   [2, "Dirty Sock"],
+//   [1, "Hair Pin"],
+//   [5, "Microphone"]
+// ];
+
+// var newInv = [
+//   [2, "Hair Pin"],
+//   [3, "Half-Eaten Apple"],
+//   [67, "Bowling Ball"],
+//   [7, "Toothpaste"]
+// ];
+
+// console.log(updateInventory(curInv, newInv));
+
+//////// Pairwise /////////////////
+
+// Given an array arr, find element pairs whose sum equal
+// the second argument arg and return the sum of their
+// indices.
+
+// You may use multiple pairs that have the same
+// numeric elements but different indices. Each pair
+// should use the lowest possible available indices. Once
+// an element has been used it cannot be reused to pair
+// with another element.
+
+// function pairwise(arr, arg) {
+//   let index = 0;
+//   let usedIndex = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     let currentValue = arr[i];
+
+//     for (let k = i + 1; k < arr.length; k++) {
+//       if (
+//         currentValue + arr[k] === arg &&
+//         !usedIndex.includes(i) &&
+//         !usedIndex.includes(k)
+//       ) {
+//         index += i + k;
+//         usedIndex.push(i, k);
+//       }
+//     }
+//   }
+//   return index;
+// }
+
+// console.log(pairwise([1, 1, 1], 2));
